@@ -2,7 +2,10 @@ import json
 import logging
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs
+from flask import Flask
+app = Flask(__name__)
 
+@app.route('/')
 
 class S(BaseHTTPRequestHandler):
     def _set_response(self):
