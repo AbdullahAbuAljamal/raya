@@ -51,6 +51,8 @@ def run(server_class=HTTPServer, handler_class=S, port=340):
         pass
     httpd.server_close()
     logging.info("Stopping httpd...\n")
+    
+    return "Abdullah"
 
 
 if __name__ == "__main__":
