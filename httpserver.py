@@ -23,12 +23,13 @@ class S(BaseHTTPRequestHandler):
         )  # <--- Gets the size of data
         post_data = self.rfile.read(content_length)  # <--- Gets the data itself
         data = parse_qs(post_data.decode(),keep_blank_values=1)
+        obj = json.loads(data)
 
         logging.info(
             "POST request,\nPath: %s\nHeaders:\n%s\n\nBody:\n%s\n",
             str(self.path),
             str(self.headers),
-            data,
+            str(obj)
         )
 
         self._set_response()
